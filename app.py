@@ -58,7 +58,7 @@ if uploaded_files:  # Ensures at least one file is uploaded
         # Choose Specific Columns to convert or Keep
         st.header("Select Columns to Convert")
         columns = st.multiselect(f"Choose Columns for {file.name}", st.session_state.df.columns, default=st.session_state.df.columns)
-        df = df[columns]
+        st.session_state.df = st.session_state.df[columns]
 
         #create come visualization
 
